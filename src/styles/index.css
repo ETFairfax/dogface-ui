@@ -436,6 +436,12 @@ h2 {
           appearance: none;
 }
 
+.bg-brown {
+  --bg-opacity: 1;
+  background-color: #773f0e;
+  background-color: rgba(119, 63, 14, var(--bg-opacity));
+}
+
 .rounded {
   border-radius: 0.25rem;
 }
@@ -509,6 +515,12 @@ h2 {
 
 .table-auto {
   table-layout: auto;
+}
+
+.text-white {
+  --text-opacity: 1;
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, var(--text-opacity));
 }
 
 .whitespace-no-wrap {

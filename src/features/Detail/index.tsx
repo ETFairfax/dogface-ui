@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'store/hooks/useSelector'
 import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchBreedImagesThunk } from 'store/breeds/thunks'
 
 const Detail: React.FC = () => {
@@ -23,7 +23,12 @@ const Detail: React.FC = () => {
 
     return (
         <>
-            <button onClick={handleChangePictureClick}>Change Pictures</button>
+            <button
+                className='bg-brown text-white py-2 px-4'
+                onClick={handleChangePictureClick}
+            >
+                Change Pictures
+            </button>
             <h2>{selection?.name}</h2>
             <p>
                 Sub breeds:
@@ -43,6 +48,7 @@ const Detail: React.FC = () => {
                     ))}
                 </div>
             )}
+            <Link to='/'>Back</Link>
         </>
     )
 }
