@@ -11,6 +11,7 @@ body {
 h1 {
     @apply text-brown pb-4;
 }
+
 h2 {
     @apply text-black font-bold pb-2;
 }
@@ -31,4 +32,12 @@ img {
     @apply m-1;
     height: 280px;
     width: 280px;
+}
+
+a {
+    @apply text-brown underline;
+}
+
+a:hover {
+    @apply no-underline;
 }

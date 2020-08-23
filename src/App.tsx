@@ -21,7 +21,7 @@ const App = () => {
     if (groups.length === 0) return <>Loading...</>
 
     return (
-        <>
+        <div className='container mx-auto'>
             <header>
                 <h1>Doggy McDogface</h1>
             </header>
@@ -35,7 +35,7 @@ const App = () => {
                     </Route>
                 </Switch>
             </main>
-        </>
+        </div>
     )
 }
 

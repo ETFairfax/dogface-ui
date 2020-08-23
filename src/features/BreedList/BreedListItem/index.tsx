@@ -4,11 +4,10 @@ import { IBreedGroup } from 'store/breeds/types'
 
 const BreedListItem: React.FC<IBreedGroup> = ({ name, breeds }) => (
     <tr>
+        <td>{name}</td>
+        <td>{breeds.length}</td>
         <td>
-            <Link to={`/${name}`}>{name}</Link>
-        </td>
-        <td>
-            <Link to={`/${name}`}>{breeds.length}</Link>
+            <Link to={`/${name}`}>View</Link>
         </td>
     </tr>
 )
