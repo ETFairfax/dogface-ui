@@ -21,16 +21,21 @@ const App = () => {
     if (groups.length === 0) return <>Loading...</>
 
     return (
-        <main>
-            <Switch>
-                <Route exact path='/'>
-                    <BreedList />
-                </Route>
-                <Route exact path='/:group'>
-                    <Detail />
-                </Route>
-            </Switch>
-        </main>
+        <>
+            <header>
+                <h1>Doggy McDogface</h1>
+            </header>
+            <main>
+                <Switch>
+                    <Route exact path='/'>
+                        <BreedList />
+                    </Route>
+                    <Route exact path='/:group'>
+                        <Detail />
+                    </Route>
+                </Switch>
+            </main>
+        </>
     )
 }
 

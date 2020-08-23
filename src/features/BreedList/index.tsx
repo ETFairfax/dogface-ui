@@ -6,11 +6,11 @@ const BreedList: React.FC = () => {
     const { groups } = useSelector(({ breedGroups }) => breedGroups)
 
     return (
-        <div>
+        <table>
             {groups.map((group) => (
                 <BreedListItem key={group.name} {...group} />
             ))}
-        </div>
+        </table>
     )
 }
 
