@@ -59,10 +59,7 @@ const Detail: React.FC = () => {
             )}
 
             <Link to='/'>
-                <button
-                    className='bg-transparent text-brown py-2 px-4 border border-brown hover:bg-brown hover:text-white'
-                    onClick={handleChangePictureClick}
-                >
+                <button className='bg-transparent text-brown py-2 px-4 border border-brown hover:bg-brown hover:text-white'>
                     Back
                 </button>
             </Link>
