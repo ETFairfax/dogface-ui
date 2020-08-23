@@ -8,12 +8,15 @@ body {
     padding: 15px;
 }
 
-h1,
+h1 {
+    @apply text-brown pb-4;
+}
 h2 {
-    @apply text-brown;
+    @apply text-black font-bold pb-2;
 }
 
 img {
+    @apply m-1;
     height: 280px;
     width: 280px;
 }

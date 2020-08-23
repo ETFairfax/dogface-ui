@@ -23,19 +23,26 @@ const Detail: React.FC = () => {
 
     return (
         <>
-            <button
-                className='bg-brown text-white py-2 px-4'
-                onClick={handleChangePictureClick}
-            >
-                Change Pictures
-            </button>
-            <h2>{selection?.name}</h2>
-            <p>
-                Sub breeds:
-                {selection?.breeds.map((breed) => (
-                    <span>{breed}</span>
-                ))}
-            </p>
+            <div className='flex justify-between mb-4'>
+                <div>
+                    <h2>{selection?.name}</h2>
+                    <p>
+                        Sub breeds:{' '}
+                        {selection?.breeds.map((breed, i) => [
+                            i > 0 && ', ',
+                            <span className='text-brown' key={i}>
+                                {breed}
+                            </span>
+                        ])}
+                    </p>
+                </div>
+                <button
+                    className='bg-brown text-white py-2 px-4'
+                    onClick={handleChangePictureClick}
+                >
+                    Change Pictures
+                </button>
+            </div>
             {hasImages && (
                 <div className='flex flex-wrap justify-between'>
                     {selection?.images.map((image) => (
@@ -48,7 +55,15 @@ const Detail: React.FC = () => {
                     ))}
                 </div>
             )}
-            <Link to='/'>Back</Link>
+
+            <Link to='/'>
+                <button
+                    className='bg-transparent text-brown py-2 px-4 border border-brown hover:bg-brown hover:text-white'
+                    onClick={handleChangePictureClick}
+                >
+                    Back
+                </button>
+            </Link>
         </>
     )
 }
