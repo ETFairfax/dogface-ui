@@ -7,12 +7,12 @@ import BreedListItem from './BreedListItem'
 // import About from 'features/About'
 
 const BreedList: React.FC = () => {
-    const { breeds } = useSelector(({ breeds }) => breeds)
+    const { breedGroups } = useSelector(({ breedGroups }) => breedGroups)
 
     return (
         <div>
-            {breeds.map((x) => (
-                <BreedListItem {...x} />
+            {breedGroups.map((breedGroup) => (
+                <BreedListItem {...breedGroup} />
             ))}
         </div>
     )

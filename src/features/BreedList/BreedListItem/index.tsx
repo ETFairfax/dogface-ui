@@ -1,9 +1,9 @@
 import React from 'react'
-import { IBreed } from 'store/breeds/types'
+import { IBreedGroup } from 'store/breeds/types'
 
-const BreedListItem: React.FC<IBreed> = ({ name }) => (
-    <div className=''>
-        <div className=''>{name}</div>
+const BreedListItem: React.FC<IBreedGroup> = ({ name, breeds }) => (
+    <div>
+        {name} {breeds.length}
     </div>
 )
 

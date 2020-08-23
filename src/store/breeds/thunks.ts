@@ -1,37 +1,41 @@
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { RootState } from 'store/index'
-import { IBreed } from './types'
-import { addBreed } from './reducer'
+import { loadBreedGroups } from './reducer'
 
-// TODO: Put each thunk in its own directory.
+// const fetchIssuesCount = (org, repo) => async dispatch => {
+//     dispatch(getRepoDetailsStarted())
+//     try {
+//       const repoDetails = await getRepoDetails(org, repo)
+//       dispatch(getRepoDetailsSuccess(repoDetails))
+//     } catch (err) {
+//       dispatch(getRepoDetailsFailed(err.toString()))
+//     }
+//   }
 
-export const addTaskThunk = (
-    breed: IBreed
-): ThunkAction<void, RootState, unknown, Action<string>> => async (
-    dispatch
-) => {
-    const options = {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(breed)
-    }
+export const fetchBreedsThunk = (): ThunkAction<
+    void,
+    RootState,
+    unknown,
+    Action<string>
+> => async (dispatch) => {
     try {
-        // TODO: Call actual API
-        const fetchResponse = await fetch(
-            `https://jsonplaceholder.typicode.com/posts`,
-            options
-        )
+        const fetchResponse = await fetch(`https://dog.ceo/api/breeds/list/all`)
 
         const data = await fetchResponse.json()
 
-        dispatch(addBreed(breed))
+        const result = data.message
 
-        return data
+        // Data comes down as a object - converted to an array to simplify usage later
+        const parsed = Object.keys(result).map((key) => ({
+            name: key,
+            breeds: result[key]
+        }))
+
+        console.log('parsed', parsed)
+
+        dispatch(loadBreedGroups(parsed))
     } catch (e) {
-        return e // TODO: dispatch(addTaskError(e))
+        // TODO: dispatch(loadBreedGgroupsError(e))
     }
 }

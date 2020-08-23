@@ -1,12 +1,18 @@
 import React, { useEffect } from 'react'
 import { registerLibrary } from './fonts'
 import BreedList from 'features/BreedList'
+import { fetchBreedsThunk } from 'store/breeds/thunks'
+import { useDispatch } from 'react-redux'
 import './styles/index.css'
 
 registerLibrary()
 
 const App = () => {
-    useEffect(() => {})
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchBreedsThunk())
+    })
 
     return (
         <main>
