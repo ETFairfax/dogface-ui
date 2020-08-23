@@ -4,14 +4,14 @@ import { IBreedsState, IBreedGroup, IFetchImageResult } from './types'
 const breedGroups = createSlice({
     name: 'breedGroups',
     initialState: {
-        breedGroups: []
+        groups: []
     } as IBreedsState,
     reducers: {
         loadBreedGroups: (state, action: PayloadAction<IBreedGroup[]>) => {
-            state.breedGroups = action.payload
+            state.groups = action.payload
         },
         loadBreedImages: (state, action: PayloadAction<IFetchImageResult>) => {
-            state.breedGroups = state.breedGroups.map((g) => {
+            state.groups = state.groups.map((g) => {
                 if (g.name === action.payload.group)
                     return { ...g, images: action.payload.imageurls }
 

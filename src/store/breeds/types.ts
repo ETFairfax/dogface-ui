@@ -9,7 +9,7 @@ export interface IBreed {
 }
 
 export interface IBreedsState {
-    breedGroups: IBreedGroup[]
+    groups: IBreedGroup[]
 }
 
 export interface IFetchImageResult {

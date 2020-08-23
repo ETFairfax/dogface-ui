@@ -3,12 +3,12 @@ import { useSelector } from 'store/hooks/useSelector'
 import BreedListItem from './BreedListItem'
 
 const BreedList: React.FC = () => {
-    const { breedGroups } = useSelector(({ breedGroups }) => breedGroups)
+    const { groups } = useSelector(({ breedGroups }) => breedGroups)
 
     return (
         <div>
-            {breedGroups.map((breedGroup) => (
-                <BreedListItem {...breedGroup} />
+            {groups.map((group) => (
+                <BreedListItem {...group} />
             ))}
         </div>
     )
