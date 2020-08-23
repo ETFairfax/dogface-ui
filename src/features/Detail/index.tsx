@@ -33,7 +33,7 @@ const Detail: React.FC = () => {
             </p>
             {hasImages &&
                 selection?.images.map((image) => (
-                    <img key={image} height='280px' src={image} alt='' />
+                    <img key={image} src={image} alt='' />
                 ))}
         </>
     )

@@ -4,32 +4,12 @@
 
 @tailwind utilities;
 
-html,
-body {
-    @apply bg-gray-100 text-gray-900;
-}
-
-h1 {
-    @apply text-2xl text-gray-900 font-semibold pt-4 font-normal;
-}
-
+h1,
 h2 {
-    @apply text-xl text-gray-900 font-semibold pt-4 font-medium;
+    @apply text-brown;
 }
 
-h3 {
-    @apply text-lg text-gray-900 font-bold pt-4 font-medium;
-}
-
-hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-}
-
-.bg-orange-overstate {
-    background-image: url(./../images/bg-orange.png);
-}
-
-.bg-blue-overstate {
-    background-image: url(./../images/bg-blue.png);
+.img {
+    height: 280px;
+    width: 280px;
 }

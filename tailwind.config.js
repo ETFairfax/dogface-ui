@@ -1,4 +1,5 @@
 const { colors } = require('tailwindcss/defaultTheme')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
     purge: [],
@@ -22,16 +23,25 @@ module.exports = {
                 'sans-serif'
             ]
         },
+        fontSize: {
+            xl: '30px',
+            lg: '20px',
+            base: '16px'
+        },
         colors: {
-            ...colors,
-            brand: {
-                brown: '#773f0e',
-                black: '#000000',
-                grey: '#999999'
-            }
+            brown: '#773f0e',
+            black: '#000000',
+            grey: '#999999'
         },
         extend: {}
     },
     variants: {},
-    plugins: []
+    plugins: [
+        plugin(function ({ addBase, config }) {
+            addBase({
+                h1: { fontSize: config('theme.fontSize.xl') },
+                h2: { fontSize: config('theme.fontSize.lg') }
+            })
+        })
+    ]
 }

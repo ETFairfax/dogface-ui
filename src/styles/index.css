@@ -37,6 +37,11 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
 /* Grouping content
    ========================================================================== */
 
@@ -95,6 +100,10 @@ code {
 /**
  * Remove the border on images inside links in IE 10.
  */
+
+img {
+  border-style: none;
+}
 
 /* Forms
    ========================================================================== */
@@ -240,6 +249,13 @@ template {
  * Removes the default spacing and border for appropriate elements.
  */
 
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
 button {
   background-color: transparent;
   background-image: none;
@@ -304,7 +320,7 @@ html {
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e2e8f0; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 /*
@@ -321,12 +337,26 @@ html {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
+img {
+  border-style: solid;
+}
+
 input::placeholder {
   color: #a0aec0;
 }
 
 button {
   cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 /**
@@ -374,7 +404,7 @@ code {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-
+img,
 object {
   display: block;
   vertical-align: middle;
@@ -387,22 +417,23 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.bg-blue-500 {
-  --bg-opacity: 1;
-  background-color: #4299e1;
-  background-color: rgba(66, 153, 225, var(--bg-opacity));
-}
-
-.hover\:bg-blue-700:hover {
-  --bg-opacity: 1;
-  background-color: #2b6cb0;
-  background-color: rgba(43, 108, 176, var(--bg-opacity));
 }
 
 .rounded {
@@ -415,6 +446,10 @@ object {
 
 .cursor-not-allowed {
   cursor: not-allowed;
+}
+
+.table {
+  display: table;
 }
 
 .font-bold {
@@ -456,18 +491,6 @@ object {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
-.text-white {
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
-}
-
-.text-gray-700 {
-  --text-opacity: 1;
-  color: #4a5568;
-  color: rgba(74, 85, 104, var(--text-opacity));
-}
-
 .whitespace-no-wrap {
   white-space: nowrap;
 }
@@ -476,12 +499,14 @@ object {
   width: 100%;
 }
 
-html,
-body {
-  --bg-opacity: 1;
-  background-color: #f7fafc;
-  background-color: rgba(247, 250, 252, var(--bg-opacity));
+h1,
+h2 {
   --text-opacity: 1;
-  color: #1a202c;
-  color: rgba(26, 32, 44, var(--text-opacity));
+  color: #773f0e;
+  color: rgba(119, 63, 14, var(--text-opacity));
+}
+
+.img {
+  height: 280px;
+  width: 280px;
 }
