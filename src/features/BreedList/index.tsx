@@ -8,7 +8,7 @@ const BreedList: React.FC = () => {
     return (
         <div>
             {groups.map((group) => (
-                <BreedListItem {...group} />
+                <BreedListItem key={group.name} {...group} />
             ))}
         </div>
     )
