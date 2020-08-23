@@ -6,7 +6,11 @@ const BreedList: React.FC = () => {
     const { groups } = useSelector(({ breedGroups }) => breedGroups)
 
     return (
-        <table>
+        <table className='table-auto'>
+            <tr>
+                <th>Bread group</th>
+                <th>Number of breeds</th>
+            </tr>
             {groups.map((group) => (
                 <BreedListItem key={group.name} {...group} />
             ))}

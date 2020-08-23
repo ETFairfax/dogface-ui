@@ -448,8 +448,20 @@ h2 {
   cursor: not-allowed;
 }
 
+.flex {
+  display: flex;
+}
+
 .table {
   display: table;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .font-bold {
@@ -487,8 +499,16 @@ h2 {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 .focus\:shadow-outline:focus {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.table-auto {
+  table-layout: auto;
 }
 
 .whitespace-no-wrap {
@@ -510,7 +530,7 @@ h2 {
   color: rgba(119, 63, 14, var(--text-opacity));
 }
 
-.img {
+img {
   height: 280px;
   width: 280px;
 }

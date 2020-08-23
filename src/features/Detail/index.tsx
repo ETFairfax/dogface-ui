@@ -31,10 +31,18 @@ const Detail: React.FC = () => {
                     <span>{breed}</span>
                 ))}
             </p>
-            {hasImages &&
-                selection?.images.map((image) => (
-                    <img key={image} src={image} alt='' />
-                ))}
+            {hasImages && (
+                <div className='flex flex-wrap justify-between'>
+                    {selection?.images.map((image) => (
+                        <img
+                            key={image}
+                            src={image}
+                            alt=''
+                            className='shadow-xl'
+                        />
+                    ))}
+                </div>
+            )}
         </>
     )
 }
