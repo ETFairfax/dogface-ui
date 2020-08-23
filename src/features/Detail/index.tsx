@@ -11,14 +11,26 @@ const Detail: React.FC = () => {
         breedGroups.groups.find((g) => g.name === group)
     )
 
+    const handleChangePictureClick = () => {
+        dispatch(fetchBreedImagesThunk(group, true))
+    }
+
     useEffect(() => {
-        dispatch(fetchBreedImagesThunk(group))
+        dispatch(fetchBreedImagesThunk(group, false))
     }, [group])
 
     const hasImages = selection?.images && selection.images.length > 0
 
     return (
         <>
+            <button onClick={handleChangePictureClick}>Change Pictures</button>
+            <h2>{selection?.name}</h2>
+            <p>
+                Sub breeds:
+                {selection?.breeds.map((breed) => (
+                    <span>{breed}</span>
+                ))}
+            </p>
             {hasImages &&
                 selection?.images.map((image) => (
                     <img key={image} height='280px' src={image} alt='' />

@@ -4,7 +4,8 @@ import { RootState } from 'store/index'
 import { loadBreedImages } from './../reducer'
 
 export const fetchBreedImagesThunk = (
-    group: string
+    group: string,
+    forceUpdate: boolean
 ): ThunkAction<void, RootState, unknown, Action<string>> => async (
     dispatch,
     getState
@@ -17,7 +18,7 @@ export const fetchBreedImagesThunk = (
         })
 
         // If not, then call the api
-        if (selected?.images?.length === 0) {
+        if (forceUpdate === true || selected?.images?.length === 0) {
             const fetchResponse = await fetch(
                 `https://dog.ceo/api/breed/${group}/images/random/3`
             )
