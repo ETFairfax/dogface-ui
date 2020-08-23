@@ -499,6 +499,10 @@ h2 {
   width: 100%;
 }
 
+body {
+  padding: 15px;
+}
+
 h1,
 h2 {
   --text-opacity: 1;

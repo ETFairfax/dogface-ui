@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+body {
+    padding: 15px;
+}
+
 h1,
 h2 {
     @apply text-brown;
