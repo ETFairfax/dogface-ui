@@ -1,17 +1,7 @@
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { RootState } from 'store/index'
-import { loadBreedGroups } from './reducer'
-
-// const fetchIssuesCount = (org, repo) => async dispatch => {
-//     dispatch(getRepoDetailsStarted())
-//     try {
-//       const repoDetails = await getRepoDetails(org, repo)
-//       dispatch(getRepoDetailsSuccess(repoDetails))
-//     } catch (err) {
-//       dispatch(getRepoDetailsFailed(err.toString()))
-//     }
-//   }
+import { loadBreedGroups } from './../reducer'
 
 export const fetchBreedsThunk = (): ThunkAction<
     void,
@@ -29,10 +19,9 @@ export const fetchBreedsThunk = (): ThunkAction<
         // Data comes down as a object - converted to an array to simplify usage later
         const parsed = Object.keys(result).map((key) => ({
             name: key,
-            breeds: result[key]
+            breeds: result[key],
+            images: []
         }))
-
-        console.log('parsed', parsed)
 
         dispatch(loadBreedGroups(parsed))
     } catch (e) {
