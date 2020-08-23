@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { registerLibrary } from './fonts'
-import BreedList from 'features/BreedList'
 import { fetchBreedsThunk } from 'store/breeds/thunks'
 import { useDispatch } from 'react-redux'
+import BreedList from 'features/BreedList'
+import Detail from 'features/Detail'
 import './styles/index.css'
 
 registerLibrary()
@@ -22,7 +23,7 @@ const App = () => {
                     <BreedList />
                 </Route>
                 <Route path='/:group'>
-                    <p>Here</p>
+                    <Detail />
                 </Route>
             </Switch>
         </main>
