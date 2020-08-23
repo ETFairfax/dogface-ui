@@ -1,10 +1,11 @@
 import React from 'react'
-import { useSelector } from 'store/hooks/useSelector'
+import { useParams } from 'react-router-dom'
+// import { useSelector } from 'store/hooks/useSelector'
 
 const Detail: React.FC = () => {
-    const { breedGroups } = useSelector(({ breedGroups }) => breedGroups)
+    let { group } = useParams()
 
-    return <div>Foo </div>
+    return <div>{group}</div>
 }
 
 export default Detail
