@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import BreedList from './BreedList'
 
 const Search: React.FC = () => {
     const [value, setValue] = useState('')
@@ -9,8 +10,13 @@ const Search: React.FC = () => {
 
     return (
         <>
-            {value}
-            <input value={value} onChange={handleInputChange} />
+            <input
+                className='border border-brown border py-1 px-3 mb-3 text-grey'
+                placeholder='start typing to filter breeds...'
+                value={value}
+                onChange={handleInputChange}
+            />
+            <BreedList filter={value} />
         </>
     )
 }

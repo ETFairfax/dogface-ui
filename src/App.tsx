@@ -4,8 +4,8 @@ import { registerLibrary } from './fonts'
 import { fetchBreedsThunk } from 'store/breeds/thunks'
 import { useSelector } from 'store/hooks/useSelector'
 import { useDispatch } from 'react-redux'
-import BreedList from 'features/BreedList'
 import Detail from 'features/Detail'
+import Search from 'features/Search'
 import './styles/index.css'
 
 registerLibrary()
@@ -28,7 +28,7 @@ const App = () => {
             <main>
                 <Switch>
                     <Route exact path='/'>
-                        <BreedList />
+                        <Search />
                     </Route>
                     <Route exact path='/:group'>
                         <Detail />
