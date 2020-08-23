@@ -32,7 +32,10 @@ module.exports = {
             brown: '#773f0e',
             black: '#000000',
             white: '#FFFFFF',
-            grey: '#999999'
+            grey: {
+                light: '#eeee',
+                default: '#999999'
+            }
         },
         extend: {}
     },

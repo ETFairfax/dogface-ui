@@ -15,6 +15,18 @@ h2 {
     @apply text-black font-bold pb-2;
 }
 
+tr {
+    @apply border-b border-grey-light;
+}
+
+th {
+    @apply font-normal;
+}
+
+td {
+    @apply py-2;
+}
+
 img {
     @apply m-1;
     height: 280px;

@@ -448,6 +448,10 @@ h2 {
   background-color: rgba(119, 63, 14, var(--bg-opacity));
 }
 
+.border-collapse {
+  border-collapse: collapse;
+}
+
 .border-brown {
   --border-opacity: 1;
   border-color: #773f0e;
@@ -538,6 +542,10 @@ h2 {
   table-layout: auto;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-brown {
   --text-opacity: 1;
   color: #773f0e;
@@ -580,6 +588,20 @@ h2 {
   color: #000000;
   color: rgba(0, 0, 0, var(--text-opacity));
   font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+
+tr {
+  border-bottom-width: 1px;
+  border-color: #eeee;
+}
+
+th {
+  font-weight: 400;
+}
+
+td {
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
