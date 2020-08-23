@@ -36,15 +36,17 @@ const Detail: React.FC = () => {
                         ])}
                     </p>
                 </div>
-                <button
-                    className='bg-brown text-white py-2 px-4'
-                    onClick={handleChangePictureClick}
-                >
-                    Change Pictures
-                </button>
+                <div>
+                    <button
+                        className='bg-brown text-white py-2 px-4 whitespace-no-wrap'
+                        onClick={handleChangePictureClick}
+                    >
+                        Change Pictures
+                    </button>
+                </div>
             </div>
             {hasImages && (
-                <div className='flex flex-wrap justify-between'>
+                <div className='flex flex-wrap justify-between my-4'>
                     {selection?.images.map((image) => (
                         <img
                             key={image}
