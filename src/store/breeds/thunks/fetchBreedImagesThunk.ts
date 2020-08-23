@@ -6,16 +6,28 @@ import { loadBreedImages } from './../reducer'
 export const fetchBreedImagesThunk = (
     group: string
 ): ThunkAction<void, RootState, unknown, Action<string>> => async (
-    dispatch
+    dispatch,
+    getState
 ) => {
     try {
-        const fetchResponse = await fetch(
-            `https://dog.ceo/api/breed/${group}/images/random/3`
-        )
+        // Check the current state to see if the images have been loaded already...
+        const { breedGroups } = getState()
+        const selected = breedGroups.groups.find((x) => {
+            return x.name === group
+        })
 
-        const data = await fetchResponse.json()
+        // If not, then call the api
+        if (selected?.images?.length === 0) {
+            const fetchResponse = await fetch(
+                `https://dog.ceo/api/breed/${group}/images/random/3`
+            )
 
-        dispatch(loadBreedImages({ group: group, imageurls: data.message }))
+            const data = await fetchResponse.json()
+
+            dispatch(loadBreedImages({ group: group, imageurls: data.message }))
+        }
+
+        return
     } catch (e) {
         // TODO: dispatch(loadBreedGgroupsError(e))
     }

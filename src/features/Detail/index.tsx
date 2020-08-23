@@ -5,19 +5,26 @@ import { useParams } from 'react-router-dom'
 import { fetchBreedImagesThunk } from 'store/breeds/thunks'
 
 const Detail: React.FC = () => {
-    let { group } = useParams()
+    const { group } = useParams()
     const dispatch = useDispatch()
     const selection = useSelector(({ breedGroups }) =>
         breedGroups.groups.find((g) => g.name === group)
     )
 
     useEffect(() => {
-        if (selection?.images && selection.images.length === 0) {
-            dispatch(fetchBreedImagesThunk(group))
-        }
+        dispatch(fetchBreedImagesThunk(group))
     }, [group])
 
-    return <div>{group}</div>
+    const hasImages = selection?.images && selection.images.length > 0
+
+    return (
+        <>
+            {hasImages &&
+                selection?.images.map((image) => (
+                    <img key={image} height='280px' src={image} alt='' />
+                ))}
+        </>
+    )
 }
 
 export default Detail
