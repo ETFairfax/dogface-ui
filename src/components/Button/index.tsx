@@ -4,9 +4,9 @@ import { IButton } from './interface'
 
 const Button: React.FC<IButton> = ({ children, disabled, type, ...rest }) => {
     const classes = classNames({
-        'whitespace-no-wrap bg-blue-500 text-white font-bold py-2 px-4 rounded': true,
+        'bg-brown text-white py-2 px-4 whitespace-no-wrap border': true,
         'opacity-50 cursor-not-allowed': disabled,
-        'hover:bg-blue-700': !disabled
+        'hover:bg-white hover:text-brown hover:border-brown hover:border': !disabled
     })
     return (
         <button

@@ -3,6 +3,7 @@ import { useSelector } from 'store/hooks/useSelector'
 import { useDispatch } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { fetchBreedImagesThunk } from 'store/breeds/thunks'
+import { Button } from 'components'
 
 const Detail: React.FC = () => {
     const { group } = useParams()
@@ -37,12 +38,9 @@ const Detail: React.FC = () => {
                     </p>
                 </div>
                 <div>
-                    <button
-                        className='bg-brown text-white py-2 px-4 whitespace-no-wrap'
-                        onClick={handleChangePictureClick}
-                    >
+                    <Button onClick={handleChangePictureClick}>
                         Change Pictures
-                    </button>
+                    </Button>
                 </div>
             </div>
             {hasImages && (
